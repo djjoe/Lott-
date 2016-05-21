@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>Lotto</artifactId>
+    <groupId>hu.unideb.inf.prt</groupId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>Server</artifactId>
+  <description>Az alkalmazás és a hozzá tartozó kliens segítségével és a 
+		teljes értékű lottót játszhatnak a felhasználók.</description>
+  <inceptionYear>2016</inceptionYear>
+  <developers>
+    <developer>
+      <id>djjoe</id>
+      <name>Tuza József</name>
+      <email>djjoe1994@gmail.com</email>
+      <organization>University of Debrecen</organization>
+      <organizationUrl>http://www.unideb.hu</organizationUrl>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>Apache Licence, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/djjoe/lotto</url>
+  </scm>
+  <organization>
+    <name>University of Debrecen</name>
+  </organization>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer>
+                  <mainClass>hu.unideb.inf.server.Main</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    <mainClass>hu.unideb.inf.server.Main</mainClass>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+</project>
+
